@@ -5,6 +5,18 @@
 
 .container {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: minmax(1fr, auto);
+  grid-template-areas:
+    "hd hd hd hd hd"
+    "sidebar nav nav nav nav"
+    "sidebar article article article article"
+    "sidebar article article article article"
+    "sidebar article article article article"
+    "sidebar article article article article"
+    "footer footer footer footer footer";
+  gap: 4px;
 }
 
 .container div {
@@ -17,6 +29,7 @@
 
 .header {
   background-color: #393f4d;
+  grid-area: hd;
 }
 
 .menu ul,
@@ -26,6 +39,7 @@
 
 .sidebar {
   background-color: #C50208;
+  grid-area: sidebar;
 }
 
 .sidebar .photo {
@@ -46,6 +60,7 @@
 
 .nav {
   background-color: #C50208;
+  grid-area: nav;
 }
 
 .nav ul li {
@@ -55,7 +70,14 @@
 
 .article {
   background-color: #bccbde;
+  grid-area: article;
+  Display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, minmax(200px, auto));
+  gap: 20px;
 }
+
+
 
 .article p {
   font-size: 18px;
@@ -83,6 +105,7 @@
 
 .footer {
   background-color: #393f4d;
+  grid-area: footer;
 }
 
 .footer p {
