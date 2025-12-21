@@ -6,16 +6,16 @@
 .container {
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: minmax(1fr, auto);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, auto);
   grid-template-areas:
-    "hd hd hd hd hd"
-    "sidebar nav nav nav nav"
-    "sidebar article article article article"
-    "sidebar article article article article"
-    "sidebar article article article article"
-    "sidebar article article article article"
-    "footer footer footer footer footer";
+    "hd hd hd hd"
+    "sidebar nav nav nav"
+    "sidebar article article article"
+    "sidebar article article article"
+    "sidebar article article article"
+    "sidebar article article article"
+    "footer footer footer footer";
   gap: 4px;
 }
 
@@ -31,12 +31,19 @@
   background-color: #393f4d;
   grid-area: hd;
   display: grid;
-  grid-template-columns: 4fr 6fr;
+  grid-template-columns: 2fr 8fr;
+}
+
+.menu {
+  display: grid;
+  align-items: center;
+  justify-items: end;
 }
 
 .menu ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, auto);
+  width: 70%;
 }
 
 .menu ul,
@@ -49,6 +56,10 @@
 .sidebar {
   background-color: #C50208;
   grid-area: sidebar;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 30px;
 }
 
 .sidebar .photo {
@@ -70,6 +81,12 @@
 .nav {
   background-color: #C50208;
   grid-area: nav;
+}
+
+.nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
 }
 
 .nav ul li {
